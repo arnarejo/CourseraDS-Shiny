@@ -1,0 +1,41 @@
+---
+title: "RMarkdown ploty presentation"
+author: "Abdul Rasheed Narejo"
+date: "02/09/2018"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Introduction
+
+- This project was created as part of the Developing Data Products course of the Coursera [Data Science Specialisation](https://www.coursera.org/specializations/jhu-data-science).
+
+- The goal of the project is to create a web page presentation using R Markdown that features a plot created with Plotly, and to host the resulting web page on either GitHub Pages, RPubs, or NeoCities.
+
+```{r, message = FALSE, echo=FALSE, warning=FALSE}
+# load required libraries
+library(plotly)
+library(dplyr)
+```
+
+## Plot using plotly
+```{r, echo = TRUE}
+iris %>% plot_ly(x = ~Sepal.Length, y = ~Petal.Length, type="scatter",
+        mode="markers", color = ~Species)
+```
+
+## added flexibility using ggplotly on ggplot graphs
+```{r}
+p <- ggplot(iris,aes(x=Sepal.Length,y=Sepal.Width, color = Species)) +
+    geom_point() +
+    stat_smooth(method="lm")
+
+ggplotly(p)
+```
+
+## Source code
+- The R Markdown source code of this presentation can be found in [this GitHub repository](https://github.com/arnarejo/CourseraDS-plotly).
+
