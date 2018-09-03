@@ -42,7 +42,8 @@ ui <- fluidPage(
          br(),
          tags$div(tags$b("Data source:"), "https://earthquake.usgs.gov/earthquakes/"),
          tags$h3("Description"),
-         tags$p("This shiny app has been created as a part of Coursera Data Science Specialization course Developing Data Science Products. The source code for shiny app is avaiable at github repo.")
+         tags$p("This shiny app has been created as a part of Coursera Data Science Specialization course Developing Data Science Products. The source code for shiny app is avaiable at ", tags$a(href = "https://github.com/arnarejo/CourseraDS-Shiny", "Github repo.", target="_blank"))
+         
       )
    )
 )
@@ -84,8 +85,6 @@ server <- function(input, output) {
         ggplot(selectedData(), aes(mag, fill = year)) + geom_histogram(binwidth = 0.25) +
             xlab("Earthquake magnitude") + ylab("Count")
     })
-    
-   
 }
 
 # Run the application 
