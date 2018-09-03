@@ -11,31 +11,34 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ## Introduction
 
-- This presentation and associated [shiny app](https://narejo.shinyapps.io/shiny-app/) are final project Developing Data Products course of the Coursera [Data Science Specialisation](https://www.coursera.org/specializations/jhu-data-science).
+- This presentation and associated [shiny app](https://narejo.shinyapps.io/shiny-app/) are final project of Developing Data Products course of the Coursera [Data Science Specialisation](https://www.coursera.org/specializations/jhu-data-science).
 
 - The project has two parts;
   - First, you will create a Shiny application and deploy it on Rstudio's servers.
   - Second, you will use Slidify or Rstudio Presenter to prepare a reproducible pitch presentation about your application.
 
-```{r, message = FALSE, echo=FALSE, warning=FALSE}
-# load required libraries
-library(plotly)
-library(dplyr)
-```
+## Objective
+For this project I have tried to create a shiny app that achieves following  
 
+- Use leaflet to plot global map with countries being highlighted  
+
+- [Plot earthquake data for 2017 and 2018](https://earthquake.usgs.gov/earthquakes/), provide details in the popup window and make circle size/color depending on the earthquake magnitude  
+
+- As a shiny app the user has option to modify selection based on a range of earthquake magnitude and years.  
+
+- As output, the app display map with pointers of earthquakes and histogram of frequency of quakes by magnitude.  
+
+## App components
+- Inputs  
+    - A sliderInput to filter data by earthquake magnitude
+    - A checkboxGroupInput to filter data for 2017 and 2018
+
+- Ouputs  
+    - A global map using leflet with separate labelling for each country using maps library
+    - Add markers to the map by location of earthquake with extra information in pop up window
+    - a separate histogram of distribution of earthquake magnitude
+    
 ## Final result
 - The Shiny app developed for this project is available at: https://narejo.shinyapps.io/shiny-app/
 - The presentation is available at: https://arnarejo.github.io/CourseraDS-Shiny/earthquake.html
 - The source code is avaiable at: https://github.com/arnarejo/CourseraDS-Shiny/
-
-## Objective
-For this project I have tried to create a shiny app that achieves following
-- Use leaflet to plot global map with countries being highlighted
-- Plot earthquake data for 2017 and 2018, provide details in the popup window and make circle size/color depending on the earthquake magnitude
-- As a shiny app the user has option to modify selection based on a range of earthquake magnitude and years.
-- As output, the app display map with pointers of earthquakes and histogram of frequency of quakes by magnitude.
-
-## Load libraries/data
-```{r}
-
-```

@@ -3114,7 +3114,7 @@ if (document.readyState !== "loading" &&
 <slide class=""><hgroup><h2>Introduction</h2></hgroup><article  id="introduction">
 
 <ul>
-<li><p>This presentation and associated <a href='https://narejo.shinyapps.io/shiny-app/' title=''>shiny app</a> are final project Developing Data Products course of the Coursera <a href='https://www.coursera.org/specializations/jhu-data-science' title=''>Data Science Specialisation</a>.</p></li>
+<li><p>This presentation and associated <a href='https://narejo.shinyapps.io/shiny-app/' title=''>shiny app</a> are final project of Developing Data Products course of the Coursera <a href='https://www.coursera.org/specializations/jhu-data-science' title=''>Data Science Specialisation</a>.</p></li>
 <li>The project has two parts;
 
 <ul>
@@ -3123,19 +3123,42 @@ if (document.readyState !== "loading" &&
 </ul></li>
 </ul>
 
+</article></slide><slide class=""><hgroup><h2>Objective</h2></hgroup><article  id="objective">
+
+<p>For this project I have tried to create a shiny app that achieves following</p>
+
+<ul>
+<li><p>Use leaflet to plot global map with countries being highlighted</p></li>
+<li><p><a href='https://earthquake.usgs.gov/earthquakes/' title=''>Plot earthquake data for 2017 and 2018</a>, provide details in the popup window and make circle size/color depending on the earthquake magnitude</p></li>
+<li><p>As a shiny app the user has option to modify selection based on a range of earthquake magnitude and years.</p></li>
+<li><p>As output, the app display map with pointers of earthquakes and histogram of frequency of quakes by magnitude.</p></li>
+</ul>
+
+</article></slide><slide class=""><hgroup><h2>App components</h2></hgroup><article  id="app-components">
+
+<ul>
+<li>Inputs
+
+<ul>
+<li>A sliderInput to filter data by earthquake magnitude</li>
+<li>A checkboxGroupInput to filter data for 2017 and 2018</li>
+</ul></li>
+<li>Ouputs
+
+<ul>
+<li>A global map using leflet with separate labelling for each country using maps library</li>
+<li>Add markers to the map by location of earthquake with extra information in pop up window</li>
+<li>a separate histogram of distribution of earthquake magnitude</li>
+</ul></li>
+</ul>
+
 </article></slide><slide class=""><hgroup><h2>Final result</h2></hgroup><article  id="final-result">
 
 <ul>
 <li>The Shiny app developed for this project is available at: <a href='https://narejo.shinyapps.io/shiny-app/' title=''>https://narejo.shinyapps.io/shiny-app/</a></li>
-<li>The presentation is available at:</li>
+<li>The presentation is available at: <a href='https://arnarejo.github.io/CourseraDS-Shiny/earthquake.html' title=''>https://arnarejo.github.io/CourseraDS-Shiny/earthquake.html</a></li>
 <li>The source code is avaiable at: <a href='https://github.com/arnarejo/CourseraDS-Shiny/' title=''>https://github.com/arnarejo/CourseraDS-Shiny/</a></li>
-</ul>
-
-</article></slide><slide class=""><hgroup><h2>Objective</h2></hgroup><article  id="objective">
-
-<p>For this project I have tried to create a shiny app that achieves following - Use leaflet to plot global map with countries being highlighted - Plot earthquake data for 2017 and 2018, provide details in the popup window and make circle size/color depending on the earthquake magnitude - As a shiny app the user has option to modify selection based on a range of earthquake magnitude and years. - As output, the app display map with pointers of earthquakes and histogram of frequency of quakes by magnitude.</p>
-
-</article></slide><slide class=""><hgroup><h2>Load libraries/data</h2></hgroup><article  id="load-librariesdata"></article></slide>
+</ul></article></slide>
 
 
   <slide class="backdrop"></slide>

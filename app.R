@@ -1,12 +1,15 @@
+# load required libraries
 library(shiny)
 library(leaflet)
 library(dplyr)
 library(maps)
 library(ggplot2)
 
+
 mapCountries <- map("world", fill = TRUE, plot = FALSE)
 
 # read earthquake data
+# source: https://earthquake.usgs.gov/earthquakes/
 data <- read.csv("earthquake_all.csv")
 
 # convert date into factor(year)
@@ -19,28 +22,34 @@ data <- data[!is.na(data$mag) & data$mag > 0 & data$mag < 8,]
 ui <- fluidPage(
    
    # Application title
-   titlePanel("Old Faithful Geyser Data"),
+   titlePanel("Earth quake data for 2017-2018"),
    
-   # Sidebar with a slider input for number of bins 
    sidebarLayout(
       sidebarPanel(
+          # custom selection option for intensity range of earthquakes
           sliderInput("intensity", "Select EarthQuake Intensity",
                       min = 0, max = 8, value = c(0, 8)),
+          # custom option to select data for 2017 or 2018 or both
           checkboxGroupInput("years", "Select at least one year", c("2017", "2018"),c("2017", "2018")),
+          tags$h3("Histogram of earthquake magnitude"),
+          # show the histogram of earthquake magnitude
           plotOutput("histPlot")
-          
-
       ),
       
       # Show a plot of the generated distribution
       mainPanel(
-         leafletOutput("mymap")
+         leafletOutput("mymap"),
+         br(),
+         tags$div(tags$b("Data source:"), "https://earthquake.usgs.gov/earthquakes/"),
+         tags$h3("Description"),
+         tags$p("This shiny app has been created as a part of Coursera Data Science Specialization course Developing Data Science Products. The source code for shiny app is avaiable at github repo.")
       )
    )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
+    # reactive data customization on user input
         selectedData <- reactive({
         val <- input$intensity
         data <- data[data$mag > val[1] & data$mag < val[2], ]
@@ -72,7 +81,8 @@ server <- function(input, output) {
     })
     
     output$histPlot <- renderPlot({
-        ggplot(selectedData(), aes(mag, fill = year)) + geom_histogram(binwidth = 0.25)
+        ggplot(selectedData(), aes(mag, fill = year)) + geom_histogram(binwidth = 0.25) +
+            xlab("Earthquake magnitude") + ylab("Count")
     })
     
    

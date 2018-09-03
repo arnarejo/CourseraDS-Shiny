@@ -5,6 +5,6 @@ account: narejo
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 417591
-bundleId: 1566795
+bundleId: 1566953
 url: https://narejo.shinyapps.io/shiny-app/
-when: 1535965528.53243
+when: 1535974225.21342
