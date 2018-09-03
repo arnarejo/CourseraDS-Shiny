@@ -25,7 +25,7 @@ library(dplyr)
 
 ## Final result
 - The Shiny app developed for this project is available at: https://narejo.shinyapps.io/shiny-app/
-- The presentation is available at:
+- The presentation is available at: https://arnarejo.github.io/CourseraDS-Shiny/earthquake.html
 - The source code is avaiable at: https://github.com/arnarejo/CourseraDS-Shiny/
 
 ## Objective
