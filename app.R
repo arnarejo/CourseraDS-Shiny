@@ -2,6 +2,7 @@ library(shiny)
 library(leaflet)
 library(dplyr)
 library(maps)
+library(ggplot2)
 
 mapCountries <- map("world", fill = TRUE, plot = FALSE)
 
